@@ -43,21 +43,19 @@ document.querySelector('#get-access').addEventListener('click', async function i
       }
     });
 
-    const videoTracks = stream.getVideoTracks()
-    const track = videoTracks[0]
+    const videoTracks = stream.getVideoTracks();
+    const track = videoTracks[0];
 
-    const imageCapture = new ImageCapture(track);
-
-    document.querySelector('video').srcObject = stream
-    document.querySelector('#get-access').setAttribute('hidden', true)
+    document.querySelector('video').srcObject = stream;
+    document.querySelector('#get-access').setAttribute('hidden', true);
 //The video stream is stopped by track.stop() after 3 second of playback.
-    setTimeout(() => { track.stop(); }, 3 * 1000)
-  } catch (error) {
-    alert(`${error.name}`)
-    console.error(error)
+    setTimeout(() => { track.stop(); }, 3 * 1000);
+} catch (error) {
+    alert(`${error.name}`);
+    console.error(error);
   }
 })
-
+/*
 // Get a Blob from the currently selected camera source and
 // display this with an img element.
 function takePhoto(imageCapture) {
@@ -72,3 +70,4 @@ function takePhoto(imageCapture) {
     console.log('takePhoto() error: ', error);
   });
 }
+  */
