@@ -38,7 +38,10 @@ document.querySelector('#get-access').addEventListener('click', async function i
   try {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: false,
-      video: true
+      video: true,
+      facingMode: {
+              exact: 'environment'
+            }
     })
     const videoTracks = stream.getVideoTracks()
     const track = videoTracks[0]
