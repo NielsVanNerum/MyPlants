@@ -45,11 +45,13 @@ document.querySelector('#get-access').addEventListener('click', async function i
 
     const videoTracks = stream.getVideoTracks()
     const track = videoTracks[0]
+
+    const imageCapture = new ImageCapture(track);
+
     document.querySelector('video').srcObject = stream
     document.querySelector('#get-access').setAttribute('hidden', true)
 //The video stream is stopped by track.stop() after 3 second of playback.
-    setTimeout(() => { takePhoto; track.stop(); videoElement.style.display = 'none';
-    }, 3 * 1000)
+    setTimeout(() => { takePhoto(imageCapture); track.stop(); }, 3 * 1000)
   } catch (error) {
     alert(`${error.name}`)
     console.error(error)
@@ -58,8 +60,11 @@ document.querySelector('#get-access').addEventListener('click', async function i
 
 // Get a Blob from the currently selected camera source and
 // display this with an img element.
-function takePhoto() {
-  imageCapture.takePhoto().then(function(blob) {
+function takePhoto(imageCapture) {
+  const photoSettings = { imageWidth: 1920, imageHeight: 1080 };
+
+  imageCapture.takePhoto(photoSettings).then(function(blob) {
+    console.log("test")
     console.log('Took photo:', blob);
     img.classList.remove('hidden');
     img.src = URL.createObjectURL(blob);
