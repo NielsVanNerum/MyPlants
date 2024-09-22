@@ -11,55 +11,28 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="polaroid-box cards">
-        <div class="container">
-            <div class="grid grid-cols-2 gap-1 mx-2">
 
-            <div class="item">
-            <div class="polaroid"><img src="images/plants/aloe-vera.webp">
-                <div class="caption">Aloe vera</div>
-            </div>
-            </div>
-        
-            <div class="item">
-            <div class="polaroid"><img src="images/plants/pothos.jpg">
-                <div class="caption">Pothos</div>
-            </div>
-            </div>
-        
-            <div class="item">
-            <div class="polaroid"><img src="images/plants/dumb-cane.webp">
-                <div class="caption">Dumb cane</div>
-            </div>
-            </div>
-        
-            <div class="item">
-            <div class="polaroid"><img src="images/plants/cast-iron.jpg">
-                <div class="caption">Cast iron</div>
-            </div>
-            </div>
-            
-            <div class="item">
-            <div class="polaroid"><img src="images/plants/spider-plant.webp">
-                <div class="caption">Spider plant</div>
-            </div>
-            </div>
-        </div>
+<div>
+    <div class="item m-5">
+        <div class="polaroid"><img id="image" src="https://perenual.com/storage/species_image/2_abies_alba_pyramidalis/medium/49255769768_df55596553_b.jpg">
+          <div class="caption" id="title">European Silver Fir</div>
         </div>
     </div>
+    <div class="m-5 my-1 pb-5">
+        <p class="text-center" id="description">European Silver Fir (Abies alba) is an amazing coniferous species native to mountainous regions of central Europe and the Balkans. It is an evergreen tree with a narrow, pyramidal shape and long, soft needles. Its bark is scaly grey-brown and its branches are highly ornamental due to its conical-shaped silver-tinged needles. It is pruned for use as an ornamental evergreen hedging and screening plant, and is also popular for use as a Christmas tree. Young trees grow quickly and have strong, flexible branches which makes them perfect for use as windbreaks. The European Silver Fir is an impressive species, making it ideal for gardens and public spaces..</p>
     </div>
+</div>
 
-
-<div class="share-icon">
-    <button id="get-access">
-    <svg class="camera-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100" height="100"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M220.6 121.2L271.1 96 448 96l0 96-114.8 0c-21.9-15.1-48.5-24-77.2-24s-55.2 8.9-77.2 24L64 192l0-64 128 0c9.9 0 19.7-2.3 28.6-6.8zM0 128L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L271.1 32c-9.9 0-19.7 2.3-28.6 6.8L192 64l-32 0 0-16c0-8.8-7.2-16-16-16L80 32c-8.8 0-16 7.2-16 16l0 16C28.7 64 0 92.7 0 128zM168 304a88 88 0 1 1 176 0 88 88 0 1 1 -176 0z"/></svg>
+<div class="share-icon" id="newPlantButton">
+    <button id="get-access"">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
     </button>
 </div>
 
+<!--
 <video autoplay class="video-overlay"></video>
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    
+-->
     <script src="js/app.js"></script>
 </body>
 </html>

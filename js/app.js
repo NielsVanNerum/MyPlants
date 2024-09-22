@@ -1,10 +1,9 @@
+/*
+
 function rotatePolaroids() {
     var elements = document.querySelectorAll(".item");
     for (var i = 0; i < elements.length; i++) {
         rotation = getRandomInt(4);
-
-        console.log(rotation);
-        console.log(elements[i])
 
         switch(rotation) {
             case 0:
@@ -28,12 +27,75 @@ function rotatePolaroids() {
     polaroidBox.setAttribute("style", "display: unset;");
 }
 
+*/
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-rotatePolaroids();
 
+function fetchPlant() {
+  console.log("clicked!")
+
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  var ID = getRandomInt(3000);
+  
+  fetch(`https://perenual.com/api/species/details/${ID}?key=sk-XAeC66edde7b941976926`, requestOptions)
+    .then(response => response.text()) 
+    .then(text => {
+      var data = JSON.parse(text); 
+      
+      var commonName = data.common_name;
+      var mediumUrl = data.default_image.medium_url; 
+      var description = data.description;
+            
+      //console.log(commonName);
+      //console.log(mediumUrl);
+      //console.log(description);
+
+      newPlant(commonName, description, mediumUrl);
+    })
+    .catch(error => console.log('Error:', error));
+}
+
+const registerServiceWorker = async () => {
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+      });
+    } catch (error) {
+      console.error(`Registration failed with ${error}`);
+    }
+  }
+};
+
+const titleElement = document.getElementById("title");
+const descriptionElement = document.getElementById("description");
+const imageElement = document.getElementById("image");
+
+function newPlant(title, description, image_url) {
+  console.log(titleElement);
+  console.log(descriptionElement);
+  console.log(imageElement);
+
+  titleElement.innerHTML = title;
+  descriptionElement.innerHTML = description;
+  imageElement.src = image_url;
+}
+
+//registerServiceWorker();
+
+document.getElementById("newPlantButton").addEventListener("click", fetchPlant);
+
+
+// rotatePolaroids();
+
+/*
 document.querySelector('#get-access').addEventListener('click', async function init(e) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -72,3 +134,4 @@ function takePhoto(imageCapture) {
     console.log('takePhoto() error: ', error);
   });
 }
+*/
