@@ -88,7 +88,7 @@ function newPlant(title, description, image_url) {
   imageElement.src = image_url;
 }
 
-//registerServiceWorker();
+registerServiceWorker();
 
 document.getElementById("newPlantButton").addEventListener("click", fetchPlant);
 
