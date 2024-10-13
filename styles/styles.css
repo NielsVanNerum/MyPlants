@@ -8,6 +8,10 @@ body {
   font-style: italic;
 }
 
+#content {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {  
   .reset-style, .reset-style * {
     all: revert;

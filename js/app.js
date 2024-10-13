@@ -92,6 +92,17 @@ registerServiceWorker();
 
 document.getElementById("newPlantButton").addEventListener("click", fetchPlant);
 
+window.addEventListener('load', function () {
+
+  var delayInMilliseconds = 500;
+  fetchPlant();
+
+  // short delay waiting for API to respond
+  setTimeout(function() {
+    this.document.getElementById("content").setAttribute("style", "display: block;")
+  }, delayInMilliseconds);
+})
+
 
 // rotatePolaroids();
 
